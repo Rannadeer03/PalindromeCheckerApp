@@ -1,4 +1,4 @@
-// UseCase3PalindromeCheckerApp.java
+// UseCase4PalindromeCheckerApp.java
 
 // Class declaration
 public class PalindromeCheckerAPP {
@@ -19,25 +19,34 @@ public class PalindromeCheckerAPP {
         System.out.println("Developed by " + Name + " " + RANO);
         System.out.println("=====================================");
 
-        System.out.println("UC3: Palindrome Check Using String Reverse");
+        System.out.println("UC4: Character Array Based Palindrome Check");
         System.out.println("=====================================");
 
         // Hardcoded string
         String original = "madam";
 
-        // Reverse string using loop
-        String reversed = "";
+        // Convert string to character array
+        char[] characters = original.toCharArray();
 
-        for (int i = original.length() - 1; i >= 0; i--) {
-            reversed = reversed + original.charAt(i);
+        // Two-pointer approach
+        int start = 0;
+        int end = characters.length - 1;
+
+        boolean isPalindrome = true;
+
+        while (start < end) {
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        // Display original and reversed strings
-        System.out.println("Original String : " + original);
-        System.out.println("Reversed String : " + reversed);
+        // Display result
+        System.out.println("Input String: " + original);
 
-        // Compare original and reversed
-        if (original.equals(reversed)) {
+        if (isPalindrome) {
             System.out.println("Result: The string is a PALINDROME.");
         } else {
             System.out.println("Result: The string is NOT a PALINDROME.");
