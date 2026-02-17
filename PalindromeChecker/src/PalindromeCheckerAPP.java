@@ -1,4 +1,6 @@
-// UseCase4PalindromeCheckerApp.java
+// UseCase5PalindromeCheckerApp.java
+
+import java.util.Stack;   // Import Stack class
 
 // Class declaration
 public class PalindromeCheckerAPP {
@@ -19,28 +21,29 @@ public class PalindromeCheckerAPP {
         System.out.println("Developed by " + Name + " " + RANO);
         System.out.println("=====================================");
 
-        System.out.println("UC4: Character Array Based Palindrome Check");
+        System.out.println("UC5: Stack-Based Palindrome Checker");
         System.out.println("=====================================");
 
         // Hardcoded string
         String original = "madam";
 
-        // Convert string to character array
-        char[] characters = original.toCharArray();
+        // Create stack
+        Stack<Character> stack = new Stack<>();
 
-        // Two-pointer approach
-        int start = 0;
-        int end = characters.length - 1;
+        // Push characters into stack
+        for (int i = 0; i < original.length(); i++) {
+            stack.push(original.charAt(i));
+        }
 
         boolean isPalindrome = true;
 
-        while (start < end) {
-            if (characters[start] != characters[end]) {
+        // Pop characters and compare
+        for (int i = 0; i < original.length(); i++) {
+            char poppedChar = stack.pop();
+            if (original.charAt(i) != poppedChar) {
                 isPalindrome = false;
                 break;
             }
-            start++;
-            end--;
         }
 
         // Display result
