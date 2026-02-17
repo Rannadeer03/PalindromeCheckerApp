@@ -1,4 +1,4 @@
-// UseCase1PalindromeCheckerApp.java
+// UseCase2PalindromeCheckerApp.java
 
 // Class declaration
 public class PalindromeCheckerAPP {
@@ -9,7 +9,6 @@ public class PalindromeCheckerAPP {
     static final int RANO = 954;
     static final String Name = "Rannadeer kumar seetha";
 
-
     // Main method – Entry point
     public static void main(String[] args) {
 
@@ -17,14 +16,32 @@ public class PalindromeCheckerAPP {
         System.out.println("=====================================");
         System.out.println("Welcome to " + APP_NAME);
         System.out.println(VERSION);
-        System.out.println("This app is been developed by "+ Name + " " +RANO);
+        System.out.println("This app has been developed by " + Name + " " + RANO);
         System.out.println("=====================================");
 
         System.out.println("This application checks whether a given string is a palindrome.");
-        System.out.println("UC1 Implementation Successful.");
+        System.out.println("UC2 Implementation Started.");
+        System.out.println("=====================================");
 
-        System.out.println("Application Started Successfully.");
+        // Hardcoded string
+        String word = "madam";
+
+        // Reverse logic
+        String reversed = "";
+
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversed = reversed + word.charAt(i);
+        }
+
+        // Palindrome check using if-else
+        if (word.equals(reversed)) {
+            System.out.println("The word \"" + word + "\" is a Palindrome.");
+        } else {
+            System.out.println("The word \"" + word + "\" is NOT a Palindrome.");
+        }
+
+        System.out.println("=====================================");
+        System.out.println("Program Ended Successfully.");
         System.out.println("=====================================");
     }
 }
-
